@@ -1,13 +1,17 @@
 from collections import deque
 import time
 graph = {
-    "Home": [("Bus Stop", 2), ("Hospital", 3), ("Park", 4)],
+    "Home": [("Bus Stop", 2), ("Hospital", 3), ("Park", 2)],
     "Bus Stop": [("Railway", 2)],
+    "Railway": [("Library", 1)],
+    "Library": [("College", 2)],
     "Hospital": [("Temple", 2)],
+    "Temple": [("Garden", 2)],
+    "Garden": [("College", 2)],
     "Park": [("Mall", 2)],
-    "Railway": [("College", 3)],
-    "Temple": [("College", 2)],
-    "Mall": [("College", 4)],
+    "Mall": [("Cinema", 2)],
+    "Cinema": [("Stadium", 2)],
+    "Stadium": [("College", 3)],
     "College": []
 }
 def bfs(start, goal):
